@@ -1,0 +1,15 @@
+fastapi
+uvicorn[standard]
+sqlalchemy
+databases[aiosqlite]
+python-dotenv
+pydantic-settings
+rich
+asgi-correlation-id
+python-json-logger
+python-jose #generated JWT
+python-multipart #recieving form data using FastAPI
+passlib[bcrypt] #password hashing
+httpx
+aiofiles
+b2sdk
