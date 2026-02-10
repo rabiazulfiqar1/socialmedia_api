@@ -53,14 +53,17 @@ This project is a complete social media backend API that allows users to registe
 - **HTTP Client**: httpx
 - **Frontend**: Next.js, React, TypeScript, Tailwind CSS
 
-## Frontend — RZ Social
+## Frontend — Portfolio as a Social Feed
 
-The project includes a fully interactive **social media platform frontend** built with **Next.js**, **React**, and **Tailwind CSS** that connects to the FastAPI backend. It features:
+The project includes a **portfolio website styled as a social media platform**, built with **Next.js**, **React**, and **Tailwind CSS**, fully connected to the FastAPI backend.
 
-- **User Authentication** — Register, login (JWT), and logout
-- **Post Feed** — Create posts, view feed with sorting (new/old/most liked)
-- **Social Interactions** — Like posts, comment on posts, expand comment threads
-- **Portfolio Showcase** — Banner displaying the tech stack and creator info
+**Projects are displayed as social media posts** — visitors can browse them publicly, and registered users can like and comment on them using the real backend API.
+
+- **Project Feed** — Portfolio projects fetched from `GET /post` and displayed as social-style cards with like counts and comment threads
+- **User Authentication** — Register, login (JWT), and logout via modal overlay; connects to `POST /register` and `POST /token`
+- **Social Interactions** — Like projects (`POST /like`), comment on them (`POST /comment`), expand comment threads (`GET /post/{id}/comment`)
+- **About & Skills** — Dedicated section with education, skills grid, and contact links
+- **Fallback UI** — When the API is unreachable, static project cards are displayed so the portfolio is always visible
 - Dark theme with glassmorphism design and smooth animations
 - Fully responsive layout
 
