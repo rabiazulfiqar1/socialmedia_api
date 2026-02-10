@@ -371,7 +371,7 @@ export default function Home() {
             <div className="glass-card w-full max-w-md p-6 animate-slide-up">
               <div className="mb-5 flex items-center justify-between">
                 <h2 className="text-xl font-bold">{isRegister ? "Create Account" : "Welcome Back"}</h2>
-                <button onClick={() => setShowAuth(false)} className="text-muted hover:text-foreground text-xl">×</button>
+                <button onClick={() => setShowAuth(false)} className="text-muted hover:text-foreground text-xl" aria-label="Close authentication modal">×</button>
               </div>
 
               <form onSubmit={handleAuth} className="space-y-4">
