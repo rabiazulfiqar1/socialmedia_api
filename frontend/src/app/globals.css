@@ -14,8 +14,8 @@
   --color-muted: #94a3b8;
   --color-card: rgba(17, 24, 39, 0.7);
 
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
 
   --animate-fade-in: fade-in 0.8s ease-out both;
   --animate-slide-up: slide-up 0.8s ease-out both;
