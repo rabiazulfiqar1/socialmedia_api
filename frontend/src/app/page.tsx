@@ -469,7 +469,7 @@ export default function Home() {
                       {comments[post.id]?.map((c) => (
                         <div key={c.id} className="flex gap-3 rounded-lg bg-surface/50 p-3">
                           <div className="flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-accent/20 text-xs font-bold text-accent">
-                            {c.user_id}
+                            U{c.user_id}
                           </div>
                           <p className="text-sm text-muted">{c.body}</p>
                         </div>
