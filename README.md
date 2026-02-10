@@ -53,24 +53,32 @@ This project is a complete social media backend API that allows users to registe
 - **HTTP Client**: httpx
 - **Frontend**: Next.js, React, TypeScript, Tailwind CSS
 
-## Portfolio Frontend
+## Frontend — RZ Social
 
-The project includes a modern portfolio website built with **Next.js**, **React**, and **Tailwind CSS**. It features:
+The project includes a fully interactive **social media platform frontend** built with **Next.js**, **React**, and **Tailwind CSS** that connects to the FastAPI backend. It features:
 
-- Dark theme with glassmorphism design
-- Smooth animations and gradient effects
-- Sections: Hero, About, Skills, Projects, Experience, Education, Contact
+- **User Authentication** — Register, login (JWT), and logout
+- **Post Feed** — Create posts, view feed with sorting (new/old/most liked)
+- **Social Interactions** — Like posts, comment on posts, expand comment threads
+- **Portfolio Showcase** — Banner displaying the tech stack and creator info
+- Dark theme with glassmorphism design and smooth animations
 - Fully responsive layout
 
 ### Running the Frontend
 
-```bash
-cd frontend
-npm install
-npm run dev
-```
+1. Start the backend first:
+   ```bash
+   uvicorn socialmediaapi.main:app --reload
+   ```
 
-The portfolio will be available at: `http://localhost:3000`
+2. Then start the frontend:
+   ```bash
+   cd frontend
+   npm install
+   npm run dev
+   ```
+
+The frontend will be available at: `http://localhost:3000` (connects to backend at `http://localhost:8000`)
 
 ## Installation
 
@@ -202,10 +210,10 @@ pytest socialmediaapi/tests/routers/test_post.py
 
 ```
 socialmedia_api/
-├── frontend/                    # Portfolio website (Next.js)
+├── frontend/                    # Social media platform frontend (Next.js)
 │   ├── src/app/
 │   │   ├── layout.tsx           # Root layout with metadata
-│   │   ├── page.tsx             # Portfolio single-page application
+│   │   ├── page.tsx             # Social media platform UI (auth, feed, posts, comments, likes)
 │   │   └── globals.css          # Tailwind CSS theme and custom styles
 │   ├── package.json
 │   └── ...
