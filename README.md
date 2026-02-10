@@ -245,10 +245,11 @@ The application uses structured logging with correlation IDs to track requests a
 ## Security Features
 
 - Password hashing with bcrypt
-- JWT tokens with expiration (30 minutes for access tokens, 24 hours for confirmation tokens)
+- JWT tokens with expiration (default: 30 minutes for access tokens, 24 hours for confirmation tokens)
 - OAuth2 password flow authentication
 - Email confirmation for new users
 - Protected endpoints with authentication dependency
+- Secure token generation using HS256 algorithm
 
 ## External Services
 
