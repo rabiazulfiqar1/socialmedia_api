@@ -51,6 +51,26 @@ This project is a complete social media backend API that allows users to registe
 - **Logging**: python-json-logger, rich, asgi-correlation-id
 - **Testing**: pytest (with pytest-asyncio)
 - **HTTP Client**: httpx
+- **Frontend**: Next.js, React, TypeScript, Tailwind CSS
+
+## Portfolio Frontend
+
+The project includes a modern portfolio website built with **Next.js**, **React**, and **Tailwind CSS**. It features:
+
+- Dark theme with glassmorphism design
+- Smooth animations and gradient effects
+- Sections: Hero, About, Skills, Projects, Experience, Education, Contact
+- Fully responsive layout
+
+### Running the Frontend
+
+```bash
+cd frontend
+npm install
+npm run dev
+```
+
+The portfolio will be available at: `http://localhost:3000`
 
 ## Installation
 
@@ -182,6 +202,13 @@ pytest socialmediaapi/tests/routers/test_post.py
 
 ```
 socialmedia_api/
+├── frontend/                    # Portfolio website (Next.js)
+│   ├── src/app/
+│   │   ├── layout.tsx           # Root layout with metadata
+│   │   ├── page.tsx             # Portfolio single-page application
+│   │   └── globals.css          # Tailwind CSS theme and custom styles
+│   ├── package.json
+│   └── ...
 ├── socialmediaapi/
 │   ├── __init__.py
 │   ├── main.py              # FastAPI application entry point
