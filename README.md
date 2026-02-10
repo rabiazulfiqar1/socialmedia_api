@@ -51,6 +51,37 @@ This project is a complete social media backend API that allows users to registe
 - **Logging**: python-json-logger, rich, asgi-correlation-id
 - **Testing**: pytest (with pytest-asyncio)
 - **HTTP Client**: httpx
+- **Frontend**: Next.js, React, TypeScript, Tailwind CSS
+
+## Frontend — Portfolio as a Social Feed
+
+The project includes a **portfolio website styled as a social media platform**, built with **Next.js**, **React**, and **Tailwind CSS**, fully connected to the FastAPI backend.
+
+**Projects are displayed as social media posts** — visitors can browse them publicly, and registered users can like and comment on them using the real backend API.
+
+- **Project Feed** — Portfolio projects fetched from `GET /post` and displayed as social-style cards with like counts and comment threads
+- **User Authentication** — Register, login (JWT), and logout via modal overlay; connects to `POST /register` and `POST /token`
+- **Social Interactions** — Like projects (`POST /like`), comment on them (`POST /comment`), expand comment threads (`GET /post/{id}/comment`)
+- **About & Skills** — Dedicated section with education, skills grid, and contact links
+- **Fallback UI** — When the API is unreachable, static project cards are displayed so the portfolio is always visible
+- Dark theme with glassmorphism design and smooth animations
+- Fully responsive layout
+
+### Running the Frontend
+
+1. Start the backend first:
+   ```bash
+   uvicorn socialmediaapi.main:app --reload
+   ```
+
+2. Then start the frontend:
+   ```bash
+   cd frontend
+   npm install
+   npm run dev
+   ```
+
+The frontend will be available at: `http://localhost:3000` (connects to backend at `http://localhost:8000`)
 
 ## Installation
 
@@ -182,6 +213,13 @@ pytest socialmediaapi/tests/routers/test_post.py
 
 ```
 socialmedia_api/
+├── frontend/                    # Social media platform frontend (Next.js)
+│   ├── src/app/
+│   │   ├── layout.tsx           # Root layout with metadata
+│   │   ├── page.tsx             # Social media platform UI (auth, feed, posts, comments, likes)
+│   │   └── globals.css          # Tailwind CSS theme and custom styles
+│   ├── package.json
+│   └── ...
 ├── socialmediaapi/
 │   ├── __init__.py
 │   ├── main.py              # FastAPI application entry point

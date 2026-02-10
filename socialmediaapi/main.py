@@ -1,6 +1,7 @@
 from contextlib import asynccontextmanager
 from fastapi.exception_handlers import http_exception_handler
 from fastapi import FastAPI, HTTPException
+from fastapi.middleware.cors import CORSMiddleware
 from socialmediaapi.routers.post import router as post_router
 from socialmediaapi.routers.user import router as user_router
 from socialmediaapi.routers.upload import router as upload_router
@@ -23,6 +24,13 @@ async def lifespan(app: FastAPI):
 
 app = FastAPI(lifespan=lifespan)
 app.add_middleware(CorrelationIdMiddleware)
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["http://localhost:3000"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 app.include_router(post_router)
 app.include_router(user_router)
